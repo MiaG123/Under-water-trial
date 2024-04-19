@@ -365,10 +365,10 @@ export class PlayerBase extends Character {
             case "floor":
                 // Player is on the floor
                 if (this.onTop) {
-                    this.state.movement = { up: false, down: false, left: true, right: true, falling: false};
+                    this.state.movement = { up: true, down: true, left: true, right: true, falling: false};
                 // Player is falling, there are no collisions, but is in default state 
                 } else { 
-                    this.state.movement = { up: false, down: false, left: true, right: true, falling: true};
+                    this.state.movement = { up: true, down: true, left: true, right: true, falling: false};
                 }
                 break;
             
