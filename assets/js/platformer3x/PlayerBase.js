@@ -357,7 +357,7 @@ export class PlayerBase extends Character {
                 // Player is not moving vertically on the wall
                 } else {
                     this.state.movement = { up: false, down: false, left: false, right: false, falling: false };
-                    this.gravityEnabled = true; // Gravity is enabled when not climbing
+                    this.gravityEnabled = false; // Gravity is not enabled when not climbing
                 }
                 break;
             

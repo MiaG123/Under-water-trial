@@ -11,6 +11,7 @@ import Platform from './Platform.js';
 import JumpPlatform from './JumpPlatform.js';
 import Player from './Player.js';
 import PlayerHills from './PlayerHills.js';
+import PlayerUnderwater from './playerUnderwater.js':
 import Tube from './Tube.js';
 import Tree from './Tree.js';
 import Goomba from './Goomba.js';
@@ -578,13 +579,13 @@ const GameSetup = {
         ];
         // Space Game Level added to the GameEnv ...
         new GameLevel( {tag: "space", callback: this.playerOffScreenCallBack, objects: spaceGameObjects} );
-
-        // Game Over Level definition...
-        const endGameObjects = [
-        { name:'background', class: Background, id: 'background', data: this.assets.backgrounds.end}
-        ];
-        // Game Over screen added to the GameEnv ...
-        new GameLevel( {tag: "end",  callback: this.gameOverCallBack, objects: endGameObjects } );
+        
+            // Game Over Level definition...
+            const endGameObjects = [
+          { name:'background', class: Background, id: 'background', data: this.assets.backgrounds.end}
+          ];
+          // Game Over screen added to the GameEnv ...
+          new GameLevel( {tag: "end",  callback: this.gameOverCallBack, objects: endGameObjects } );
     }
 } 
 // Bind the methods to the GameSetup object, ensures "this" inside of methods binds to "GameSetup"
