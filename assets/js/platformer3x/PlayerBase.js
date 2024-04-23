@@ -360,6 +360,21 @@ export class PlayerBase extends Character {
                     this.gravityEnabled = false; // Gravity is not enabled when not climbing
                 }
                 break;
+            case "spawningWall":
+                //Wall appears after 4 seconds
+                console.log("wall spawned!");
+                 // Player is on top of the wall
+                if (this.collisionData.touchPoints.this.top && this.collisionData.touchPoints.other.bottom) {
+                    this.state.movement = { up: false, down: false, left: true, right: true, falling: false};
+                    this.gravityEnabled = false;
+                // Player is touching the wall with right side
+                } else if (this.collisionData.touchPoints.this.right) {
+                    this.state.movement = { up: false, down: false, left: true, right: false, falling: false};
+                // Player is touching the wall with left side
+                } else if (this.collisionData.touchPoints.this.left) {
+                    this.state.movement = { up: false, down: false, left: false, right: true, falling: false};
+                } 
+                setTimeout(spawnWall, 4000)
             
             // 4. Player is in default state
             case "floor":
